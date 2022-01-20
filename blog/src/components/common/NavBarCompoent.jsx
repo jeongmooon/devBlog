@@ -66,12 +66,15 @@ const SubMenuWrapper = styled(Responsive)`
 const SubMenu = styled.div`
   z-index: 999;
   background-color: #fff;
+
     .show-menu{
-    width: 376px;
+    width: 700px;
     height: 500px;
     position: absolute;
     left: 0px;
     transition: 1s;
+    font-size: 1.2rem;
+    border: 1;
     }
 
     .hide-menu{
@@ -88,10 +91,7 @@ function NavBarCompoent({toggleMEnu, isOpen}) {
     <NavbarBlock>
       <NavbarWrapper>
         <div className='left'>
-          <NavText onClick={()=>toggleMEnu()}>HTML</NavText>
-          <NavText>JavaScript</NavText>
-          <NavText>Java</NavText>
-          <NavText>취미</NavText>
+          <NavText onClick={()=>toggleMEnu()}>공부한것들</NavText>
         </div>
         <div className='right'>
           <NavText>JeongMoonBlog</NavText>
@@ -101,9 +101,10 @@ function NavBarCompoent({toggleMEnu, isOpen}) {
         <SubMenuWrapper>
           {isOpen ? (
           <SubMenu className="show-menu">
-            <li>1</li>
-            <li>1</li>
-            <li>1</li>
+            <li>HTML</li>
+            <li>JavScript</li>
+            <li>Java</li>
+            <li>React</li>
           </SubMenu>
           ):(
             ""
