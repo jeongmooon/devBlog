@@ -67,6 +67,14 @@ const SubMenu = styled.div`
   z-index: 999;
   background-color: #fff;
 
+  li{
+    list-style: none;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+  }
+
     .show-menu{
     width: 700px;
     height: 500px;
@@ -74,19 +82,10 @@ const SubMenu = styled.div`
     left: 0px;
     transition: 1s;
     font-size: 1.2rem;
-    border: 1;
-    }
-
-    .hide-menu{
-    width: 376px;
-    height: 500px;
-    position: absolute;
-    left: -376px;
-    transition: 1s;
     }
 `
 
-function NavBarCompoent({toggleMEnu, isOpen}) {
+function NavBarCompoent({toggleMEnu, isOpen, onClickHtml, onClickMain}) {
   return (
     <NavbarBlock>
       <NavbarWrapper>
@@ -94,14 +93,14 @@ function NavBarCompoent({toggleMEnu, isOpen}) {
           <NavText onClick={()=>toggleMEnu()}>공부한것들</NavText>
         </div>
         <div className='right'>
-          <NavText>JeongMoonBlog</NavText>
+          <NavText onClick={onClickMain}>JeongMoonBlog</NavText>
         </div>
       </NavbarWrapper>
       <SubMenuBlock>
         <SubMenuWrapper>
           {isOpen ? (
           <SubMenu className="show-menu">
-            <li>HTML</li>
+            <li onClick={onClickHtml}>HTML</li>
             <li>JavScript</li>
             <li>Java</li>
             <li>React</li>
