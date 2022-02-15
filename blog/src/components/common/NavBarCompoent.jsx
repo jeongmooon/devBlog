@@ -104,6 +104,7 @@ function NavBarCompoent({toggleMEnu, isOpen, onClickHtml, onClickMain}) {
             <li>JavScript</li>
             <li>Java</li>
             <li>React</li>
+            <li>Rube</li>
           </SubMenu>
           ):(
             ""
